@@ -175,7 +175,7 @@ header .menu ul li a {
     color: white;
 }
 
-.banner .banner-content button {
+.banner .banner-content a {
     text-decoration: none;
     cursor: pointer;
     border: none;
@@ -189,7 +189,7 @@ header .menu ul li a {
     z-index: 9999;
 }
 
-.banner .banner-content button:hover {
+.banner .banner-content a:hover {
     background-color: var(--color-green);
 }
 
@@ -247,20 +247,22 @@ header .menu ul li a {
     width: 50vw;
 }
 
-.sobre button {
+.sobre .content-sobre .sobre-text a {
     text-decoration: none;
     cursor: pointer;
     border: none;
-    background-color: var(--color-green);
+    background-color: var(--color-pink);
+    padding: 8px;
     border-radius: 6px;
     transition: 0.4s;
     color: white;
     font-size: 1.5rem;
     text-transform: uppercase;
-    padding: 8px;
+    z-index: 9999;
+    border: red 2px solid;
 }
 
-.sobre button:hover {
+.sobre .content-sobre .sobre-text a:hover {
     opacity: 0.8;
 }
 

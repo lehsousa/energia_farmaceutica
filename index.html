@@ -32,31 +32,43 @@
                 <h1 class="txt-logo">Energia Farmacêutica</h1>
             </div>
             <nav class="menu">
-                <ul>
+                <ul class="mainMenu">
                     <li><a href="#">home</a></li>
                     <li><a href="#sobre">sobre</a></li>
                     <li><a href="#serviços">serviços</a></li>
                     <li><a href="#contato">contato</a></li>
                 </ul>
             </nav>
+            <div class="burgue">
+                <div class="openMenu ">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="closeMenu">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
         </div>
         <section class="banner">
             <div class="shadow">
                 <div class="banner-content container">
                     <h1>Mude sua Vida!</h1>
                     <h2>Venha experimentar o que temos a lhe oferecer</h2>
-                    <button><a href="https://api.whatsapp.com/send?phone=5511989663384&text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20Energia%20Farmac%C3%AAutica" target="_blank">Saiba Mais</a></button>
                 </div>
-
+                <div class="btn">
+                    <a href="https://api.whatsapp.com/send?phone=5511989663384&text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20Energia%20Farmac%C3%AAutica" target="_blank">Saiba Mais</a>
+                </div>
             </div>
         </section>
+
+
+
     </header>
 
     <main>
 
 
         <section class="sobre" id="sobre">
-            <h1>~ sobre ~</h1>
+            <h1> sobre </h1>
             <div class="content-sobre container">
                 <div class="sobre-img">
                     <img src="/img/tayna.jpg" alt="">
@@ -64,7 +76,7 @@
                 <div class="sobre-text">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae nulla enim inventore autem sed doloremque error temporibus est. Adipisci praesentium ratione mollitia maiores dolores labore esse impedit, iste quibusdam<br> Lorem ipsum
                         dolor sit, amet consectetur adipisicing elit. Beatae nulla enim inventore autem sed doloremque error temporibus est. Adipisci praesentium ratione mollitia maiores dolores labore esse impedit, iste quibusdam ipsam.</p>
-                    <button><a href="https://api.whatsapp.com/send?phone=5511989663384&text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20Energia%20Farmac%C3%AAutica" target="_blank">Saiba mais</a></button>
+                    <a href="https://api.whatsapp.com/send?phone=5511989663384&text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20Energia%20Farmac%C3%AAutica" target="_blank">Saiba mais</a>
                 </div>
             </div>
 
@@ -258,55 +270,58 @@
 
 
         </section>
+        <section class="form container" id="contato">
+            <div class="news">
+                <p>Gostaria de mais informações, ou agendar uma consulta? <br> É fácil, basta preencher os campos abaixo.</p>
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfjKFu5NtmLrEWu9ExQBylg6jYMpuPjnCA8vZxNlx10AfZ4tQ/formResponse" target="_blank">
+                    <div class=" form-itens ">
+                        <input name="entry.2076240571" type="text" id="name " required>
+                        <label>Nome</label>
+                    </div>
+                    <div class="form-itens ">
+                        <input name="entry.1354066949" type="email" id="e-mail " required>
+                        <label>E-mail</label>
+                    </div class="form-itens ">
+                    <div class="form-itens ">
+                        <input name="entry.726467767" type="text" id="whats " required>
+                        <label>Telefone</label>
+                    </div>
 
+                    <button type="submit ">ENVIAR</button>
+
+                </form>
+
+            </div>
+            <div class="img-news">
+                <img src="/img/icon-form.svg" alt="">
+            </div>
+        </section>
     </main>
 
     <footer class="">
-        <section id="contato">
-            <div class="footer">
-                <div class="footer-logo">
-                    <a href="#"><img class="img-logo" src="/img/lotus-bege.png" alt=""></a>
 
-                </div>
-
-                <div class="icons">
-                    <ul>
-                        <li>
-                            <i class="fab fa-facebook-square"></i>
-                        </li>
-                        <li>
-                            <i class="fab fa-instagram-square"></i>
-                        </li>
-                        <li>
-                            <i class="fab fa-whatsapp-square"></i>
-                        </li>
-                    </ul>
-                </div>
-                <p>© Todos os direitos são reservados por Senitte.</p>
+        <div class="footer">
+            <div class="footer-logo">
+                <a href="#"><img class="img-logo" src="/img/lotus-bege.png" alt=""></a>
             </div>
-        </section>
+            <div class="icons">
+                <ul>
+                    <li>
+                        <i class="fab fa-facebook-square"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram-square"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp-square"></i>
+                    </li>
+                </ul>
+            </div>
+            <p>© Todos os direitos reservados a Senitte - 2021.</p>
+        </div>
+
     </footer>
-
-
-
-
-    <script>
-        const imgLogo = document.querySelector('.img-logo')
-        const imgLogoWhite = document.querySelector('.img-logo')
-
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.navbar')
-            header.classList.toggle("sticky", window.scrollY > 0)
-            if (window.scrollY > 0) {
-                document.querySelector('.txt-logo').innerHTML = "E | F"
-                imgLogo.src = '/img/lotus-verde.png'
-
-            } else {
-                document.querySelector('.txt-logo').innerHTML = "Energia Farmacêutica"
-                imgLogoWhite.src = '/img/logo-white.png'
-            }
-        })
-    </script>
+    <script src="/script.js"></script>
 </body>
 
 </html>

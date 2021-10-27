@@ -1,10 +1,10 @@
 /*-------------------- Variaveis --------------------*/
 
-:root {
+ :root {
     --font-primary: 'Montserrat', sans-serif;
     --font-secondary: 'Noto Sans JP', sans-serif;
-    --color-pink: #4c956c;
-    --color-violet: #ffc9b9;
+    --color-light-green: #4c956c;
+    --color-brown: #ffc9b9;
     --color-green: #376c4e;
 }
 
@@ -52,6 +52,10 @@ a {
     text-decoration: none;
 }
 
+section {
+    padding: 2.5rem 0;
+}
+
 
 /*-------------------- Header --------------------*/
 
@@ -71,11 +75,15 @@ header .navbar {
 }
 
 .sticky .logo h1 {
-    color: var(--color-pink);
+    color: var(--color-light-green);
 }
 
 .sticky .menu ul li a {
-    color: var(--color-pink);
+    color: var(--color-light-green);
+}
+
+.navbar.active.sticky .menu ul li a {
+    color: white;
 }
 
 header .logo {
@@ -105,7 +113,7 @@ header .menu ul li {
 }
 
 header .menu ul li:hover {
-    background-color: var(--color-violet);
+    background-color: var(--color-brown);
     color: white;
     height: 100%;
 }
@@ -115,6 +123,25 @@ header .menu ul li a {
     font-size: 1rem;
     color: white;
     text-decoration: none;
+}
+
+.burgue {
+    position: absolute;
+    right: 2rem;
+}
+
+.openMenu {
+    color: white;
+    font-size: 1.8rem;
+    display: none;
+    cursor: pointer;
+}
+
+.closeMenu {
+    color: white;
+    font-size: 1.8rem;
+    display: none;
+    cursor: pointer;
 }
 
 
@@ -130,9 +157,8 @@ header .menu ul li a {
     display: flex;
     align-items: center;
     height: 100vh;
+    padding: 0;
     background-position: center;
-    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 100%);
-    mask-image: linear-gradient(to top, transparent 0%, black 100%);
 }
 
 .banner .shadow {
@@ -159,14 +185,20 @@ header .menu ul li a {
 }
 
 .banner .banner-content h2 {
-    margin-bottom: 4rem;
+    margin-bottom: 4.5rem;
     color: white;
     z-index: 999;
     padding: 30px;
     font-family: 'Merienda', cursive;
 }
 
-.banner button {
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn a {
     cursor: pointer;
     border: none;
     background-color: var(--color-green);
@@ -175,15 +207,12 @@ header .menu ul li a {
     transition: 0.4s;
     font-size: 1.5rem;
     text-transform: uppercase;
-}
-
-.banner button a {
     color: white;
     text-decoration: none;
 }
 
-.banner .banner-content button:hover {
-    background-color: var(--color-pink);
+.btn a:hover {
+    background-color: var(--color-light-green);
 }
 
 
@@ -199,9 +228,8 @@ header .menu ul li a {
 .sobre h1 {
     font-weight: 700;
     font-size: 3rem;
-    color: var(--color-pink);
+    color: var(--color-light-green);
     margin-bottom: 2rem;
-    margin-top: 4rem;
     text-transform: uppercase;
     text-shadow: 5px 8px 10px rgba(0, 0, 0, 0.2);
     font-family: 'Merienda', cursive;
@@ -211,8 +239,6 @@ header .menu ul li a {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 .sobre-img {
@@ -242,13 +268,13 @@ header .menu ul li a {
     width: 50vw;
 }
 
-.sobre button a {
+.sobre a {
     cursor: pointer;
     border: none;
     background-color: var(--color-green);
     padding: 8px;
     border-radius: 6px;
-    transition: 0.4s;
+    transition: 0.2s ease-in;
     font-size: 1.5rem;
     text-transform: uppercase;
     text-decoration: none;
@@ -256,8 +282,8 @@ header .menu ul li a {
     padding: 8px;
 }
 
-.sobre button:hover {
-    opacity: 0.8;
+.sobre a:hover {
+    background: var(--color-light-green);
 }
 
 
@@ -268,15 +294,13 @@ header .menu ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8rem;
 }
 
 .servicos h1 {
     margin-bottom: 2rem;
     font-weight: 700;
     font-size: 3rem;
-    color: var(--color-pink);
-    margin-top: 4rem;
+    color: var(--color-light-green);
     text-transform: uppercase;
     text-shadow: 5px 8px 10px rgba(0, 0, 0, 0.2);
     font-family: 'Merienda', cursive;
@@ -381,7 +405,7 @@ header .menu ul li a {
 }
 
 .card11 {
-    background-image: url(/img/xamanico-img.jpg);
+    background-image: url('/img/xamanico-img.jpg');
     background-size: cover;
 }
 
@@ -414,7 +438,7 @@ header .menu ul li a {
 }
 
 .back-content span {
-    color: var(--color-violet);
+    color: var(--color-brown);
     text-align: center;
 }
 
@@ -428,6 +452,102 @@ header .menu ul li a {
 
 
 /*-------------------- Contato --------------------*/
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    align-items: center;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.news p {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+}
+
+.news form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+.news form .form-itens {
+    padding: 1rem 0.5rem;
+    position: relative;
+}
+
+.news form .form-itens input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    border-bottom: 1px solid var(--color-light-green);
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    font-size: 1em;
+    padding: 10px 0;
+}
+
+.news form .form-itens label {
+    font-family: var(--font-primary);
+    color: var(--color-green);
+    left: 10px;
+}
+
+input~label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    color: var(--color-green);
+    transition: 0.4s;
+}
+
+input:focus~label,
+input:valid~label {
+    transform: translateY(-20px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+
+.news button {
+    cursor: pointer;
+    border: none;
+    background-color: var(--color-green);
+    padding: 8px;
+    border-radius: 6px;
+    transition: 0.2s ease-in;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+}
+
+.news button:hover {
+    background-color: var(--color-light-green);
+    color: white;
+}
+
+.img-news {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-news img {
+    width: 30vw;
+    height: 100%;
+}
+
+
+/*-------------------- Footer --------------------*/
 
 .footer {
     display: flex;
@@ -468,7 +588,7 @@ header .menu ul li a {
 }
 
 .footer .footer-menu ul li a:hover {
-    color: var(--color-pink);
+    color: var(--color-light-green);
 }
 
 .icons ul {
@@ -479,8 +599,8 @@ header .menu ul li a {
     margin-left: 180px;
 }
 
-.icons ul li {    
-    color: var(--color-violet);
+.icons ul li {
+    color: var(--color-brown);
     font-size: 2.5rem;
     width: 2.5rem;
     height: 2.5rem;
@@ -495,13 +615,12 @@ header .menu ul li a {
     margin: 10px 15px;
 }
 
-
 .icons ul li:before {
     position: absolute;
     content: '';
     top: 0;
     left: 0;
-    background: var(--color-violet);
+    background: var(--color-brown);
     height: 100%;
     width: 100%;
     z-index: -1;
@@ -512,17 +631,67 @@ header .menu ul li a {
 .icons ul li:hover:before {
     transform: scale(1.2);
     filter: blur(2.5px);
-    box-shadow: 0 0 15px var(--color-violet);
+    box-shadow: 0 0 15px var(--color-brown);
 }
 
 .icons ul li:hover {
-    color: var(--color-pink);
-    box-shadow: 0 0 15px var(--color-violet);
-    text-shadow: 0 0 15px var(--color-violet);
+    color: var(--color-light-green);
+    box-shadow: 0 0 15px var(--color-brown);
+    text-shadow: 0 0 15px var(--color-brown);
 }
 
 .footer p {
     font-size: 10px;
     padding-right: 20px;
-    color: var(--color-violet);
+    color: var(--color-brown);
+}
+
+
+/*-------------------- Responsividade --------------------*/
+
+@media (max-width: 999px) {
+    .navbar .menu ul {
+        display: none;
+    }
+    .active {
+        transition: 5s;
+    }
+    .navbar.active .menu {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        position: absolute;
+        background-color: var(--color-light-green);
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .navbar.active .menu ul {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .navbar .menu ul li {
+        padding: 2rem 0px;
+    }
+    .navbar.active .burgue .closeMenu {
+        display: flex;
+        z-index: 999999;
+        position: relative;
+    }
+    .openMenu {
+        display: flex;
+    }
+    .navbar.active .openMenu {
+        display: none;
+    }
+    .navbar .menu ul li a {
+        font-size: 1.6rem;
+    }
 }
